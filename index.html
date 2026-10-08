@@ -217,7 +217,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 .svc::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,18,20,.92) 8%,rgba(15,18,20,.35) 55%,rgba(15,18,20,.15) 100%)}
 .svc:hover img{transform:scale(1.06)}
 .svc-body{position:relative;z-index:2;padding:30px 28px}
-.svc-num{font-family:var(--f-display);font-weight:700;font-size:.8rem;color:var(--accent-bright);letter-spacing:.1em}
+.svc-num{font-family:var(--f-display);font-weight:700;font-size:.8rem;color:#7fb2ff;letter-spacing:.1em}
 .svc h3{font-size:1.4rem;color:#fff;margin:10px 0 8px;letter-spacing:-.01em}
 .svc p{font-size:.92rem;color:rgba(255,255,255,.72);line-height:1.55}
 .svc-arrow{margin-top:16px;display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff;opacity:0;transform:translateY(6px);transition:.35s var(--ease)}
@@ -417,6 +417,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   .hero-callrow{flex-wrap:wrap}
 }
 
+/* Dark-section eyebrow labels in the lighter blue so they read on dark */
+.services .eyebrow,.process .eyebrow,.reviews .eyebrow,.cta .eyebrow{color:#7fb2ff}
+.services .eyebrow::before,.process .eyebrow::before,.reviews .eyebrow::before,.cta .eyebrow::before{background:#7fb2ff}
 </style>
 </head>
 <body>
