@@ -388,9 +388,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   /* hero text sits over the video on mobile — add shadow so it stays crisp */
   .hero h1{text-shadow:0 2px 16px rgba(0,0,0,.5)}
   .hero-sub{text-shadow:0 1px 10px rgba(0,0,0,.55)}
-  .hero-content .eyebrow,.hero-callrow,.hero-callrow a{text-shadow:0 1px 8px rgba(0,0,0,.55)}
-  .hero-content .eyebrow{color:#7fb2ff;text-shadow:0 1px 3px rgba(0,0,0,.95),0 2px 14px rgba(0,0,0,.8)}
-  .hero-content .eyebrow::before{background:#7fb2ff}
+  .hero-callrow,.hero-callrow a{text-shadow:0 1px 8px rgba(0,0,0,.55)}
+  /* eyebrow as a solid pill badge so it reads clearly over the video (no murky shadow) */
+  .hero-content .eyebrow{color:#fff;text-shadow:none;background:rgba(20,60,134,.82);padding:7px 15px;border-radius:100px;align-self:flex-start;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+  .hero-content .eyebrow::before{display:none}
   .trust-grid{grid-template-columns:repeat(2,1fr)}
   .trust-item:nth-child(2){border-right:none}
   .trust-item:nth-child(1),.trust-item:nth-child(2){border-bottom:1px solid var(--line)}
