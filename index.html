@@ -389,7 +389,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   .hero h1{text-shadow:0 2px 16px rgba(0,0,0,.5)}
   .hero-sub{text-shadow:0 1px 10px rgba(0,0,0,.55)}
   .hero-content .eyebrow,.hero-callrow,.hero-callrow a{text-shadow:0 1px 8px rgba(0,0,0,.55)}
-  .hero-content .eyebrow{color:#7fb2ff}
+  .hero-content .eyebrow{color:#7fb2ff;text-shadow:0 1px 3px rgba(0,0,0,.95),0 2px 14px rgba(0,0,0,.8)}
   .hero-content .eyebrow::before{background:#7fb2ff}
   .trust-grid{grid-template-columns:repeat(2,1fr)}
   .trust-item:nth-child(2){border-right:none}
@@ -402,7 +402,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   .rev-grid{grid-template-columns:1fr 1fr}
   .split{grid-template-columns:1fr}
   .area-primary{grid-template-columns:repeat(3,1fr)}
-  .mobile-cta{display:grid}
+  .mobile-cta{display:grid;transform:translateY(115%);transition:transform .35s var(--ease)}
+  .mobile-cta.show{transform:translateY(0)}
   body{padding-bottom:66px}
   .footer-grid{grid-template-columns:1fr 1fr}
 }
@@ -783,7 +784,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 (function(){
   "use strict";
   var nav=document.getElementById('nav'), toggle=document.getElementById('menuToggle'), menu=document.getElementById('mobileMenu');
-  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY>40); }
+  var mcta=document.querySelector('.mobile-cta');
+  function onScroll(){ var s=window.scrollY>40; nav.classList.toggle('scrolled', s); if(mcta) mcta.classList.toggle('show', s); }
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
   function closeMenu(){ menu.classList.remove('open'); nav.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
   toggle.addEventListener('click', function(){ var open=menu.classList.toggle('open'); nav.classList.toggle('open', open); toggle.setAttribute('aria-expanded', open?'true':'false'); document.body.style.overflow=open?'hidden':''; });
