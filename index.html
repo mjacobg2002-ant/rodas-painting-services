@@ -418,34 +418,25 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
 }
 
 /* ============================================================
-   ALL-BLUE TEXT — every text element is blue.
-   Navy (#163c86) on light sections, light-blue (#c3d8ff) on
-   dark sections / over photos. Button labels keep their own
-   color for contrast. SVG icons keep their defined colors.
+   BLUE HEADINGS — only headings are blue; body text keeps the
+   template defaults (white/stone on dark, dark-gray on light).
+   Navy (#163c86) on light sections, light-blue (#7fb2ff) on dark.
    ============================================================ */
-:root{--blue-on-light:#163c86;--blue-on-dark:#c3d8ff}
-/* Light-background sections → navy blue */
-.intro,.work,.why,.area,
-.intro *:not(.btn):not(svg):not(path):not(.badge):not(.badge *),
-.work *:not(.btn):not(svg):not(path),
-.why *:not(.btn):not(svg):not(path),
-.area *:not(.btn):not(svg):not(path){color:var(--blue-on-light) !important}
-/* Dark-background sections / over-photo → light blue */
-.nav,.hero-content,.trust,.services,.process,.split,.reviews,.cta,.footer,.mobile-cta,
-.nav *:not(.btn):not(svg):not(path),
-.hero-content *:not(.btn):not(svg):not(path),
-.trust *:not(.btn):not(svg):not(path),
-.services *:not(.btn):not(svg):not(path),
-.process *:not(.btn):not(svg):not(path),
-.split *:not(.btn):not(svg):not(path),
-.reviews *:not(.btn):not(svg):not(path),
-.cta *:not(.btn):not(svg):not(path),
-.footer *:not(.btn):not(svg):not(path),
-.mobile-cta *:not(.btn):not(svg):not(path){color:var(--blue-on-dark) !important}
-/* Dark chip inside the light About section → light blue */
-.intro-figure .badge,.intro-figure .badge *{color:var(--blue-on-dark) !important}
-/* The contact form is a light card nested in the dark CTA → navy (listed last so it wins) */
-.form,.form *:not(.btn):not(svg):not(path){color:var(--blue-on-light) !important}
+/* Dark-background section headings → light blue (listed first) */
+.hero :is(h1,h2,h3,h4),
+.trust :is(h1,h2,h3,h4),
+.services :is(h1,h2,h3,h4),
+.process :is(h1,h2,h3,h4),
+.split :is(h1,h2,h3,h4),
+.reviews :is(h1,h2,h3,h4),
+.cta :is(h1,h2,h3,h4),
+.footer :is(h1,h2,h3,h4){color:#7fb2ff !important}
+/* Light-background section headings → navy (listed last; form wins over .cta) */
+.intro :is(h1,h2,h3,h4),
+.work :is(h1,h2,h3,h4),
+.why :is(h1,h2,h3,h4),
+.area :is(h1,h2,h3,h4),
+.form :is(h1,h2,h3,h4){color:#163c86 !important}
 </style>
 </head>
 <body>
