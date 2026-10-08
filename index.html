@@ -378,10 +378,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
   .mobile-menu a{color:#fff;font-family:var(--f-display);font-weight:700;font-size:1.7rem;padding:12px 0;border-bottom:1px solid var(--line)}
   .mobile-menu .btn{margin-top:24px;font-size:1rem;padding:16px}
   .mobile-menu .mm-phone{border-bottom:none;color:var(--accent-bright)}
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-content{padding:120px 28px 60px;order:2}
-  .hero-media{order:1;min-height:56vh;position:relative}
+  /* Mobile: video covers the whole hero, text overlaid — no black band under the video */
+  .hero{display:block;grid-template-columns:none;min-height:100svh;position:relative}
+  .hero-media{position:absolute;inset:0;min-height:0;z-index:0}
   .hero-media img{position:absolute}
+  .hero-media::after{background:linear-gradient(180deg,rgba(20,23,26,.5) 0%,rgba(20,23,26,.28) 38%,rgba(20,23,26,.82) 100%)}
+  .hero-media::before{display:none}
+  .hero-content{position:relative;z-index:2;min-height:100svh;justify-content:flex-end;padding:120px 26px 54px}
   .trust-grid{grid-template-columns:repeat(2,1fr)}
   .trust-item:nth-child(2){border-right:none}
   .trust-item:nth-child(1),.trust-item:nth-child(2){border-bottom:1px solid var(--line)}
